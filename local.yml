@@ -2,4 +2,4 @@
   become: true
   tasks:
   - name: Install htop
-    apt: name=htop,acpid
+    apt: name=htop,acpid,yasm
