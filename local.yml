@@ -1,17 +1,4 @@
 - hosts: localhost
   tasks:
-  - name: Install htop
-    ansible.builtin.apt: 
-     name: htop
-  - name: Install acpid
-    ansible.builtin.apt: 
-     name: acpid
-  - name: Install yasm
-    ansible.builtin.apt: 
-     name: yasm
-  - name: Install nasm
-    ansible.builtin.apt: 
-     name: nasm
-  - name: Install sasm
-    ansible.builtin.apt: 
-     name: sasm
+  - name: Execute the command in remote shell; stdout goes to the specified file on the remote
+    ansible.builtin.shell: echo "Шолом мир"
