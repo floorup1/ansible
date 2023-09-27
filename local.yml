@@ -2,5 +2,16 @@
   tasks:
   - name: Install htop
     ansible.builtin.apt: 
-     name: htop,acpid,yasm,nasm,sasm
-     force_apt_get: true
+     name: htop
+  - name: Install acpid
+    ansible.builtin.apt: 
+     name: acpid
+  - name: Install yasm
+    ansible.builtin.apt: 
+     name: yasm
+  - name: Install nasm
+    ansible.builtin.apt: 
+     name: nasm
+  - name: Install sasm
+    ansible.builtin.apt: 
+     name: sasm
