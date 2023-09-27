@@ -1,5 +1,5 @@
 - hosts: localhost
-  become: true
   tasks:
   - name: Install htop
-    apt: name=htop,acpid,yasm,nasm,sasm
+    ansible.builtin.apt: 
+     name: htop,acpid,yasm,nasm,sasm
