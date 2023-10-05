@@ -7,3 +7,4 @@
   - name: It's task 3
     ansible.builtin.yum: 
     name: nasm
+    state: present
