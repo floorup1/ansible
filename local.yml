@@ -5,5 +5,4 @@
   - name: It's task 2
     ansible.builtin.shell: yum search nasm yasm &>~/2.txt
   - name: It's APT task BEATCH!
-    ansible.builtin.apt:
-    name: apache2
+    ansible.builtin.apt: apache2
