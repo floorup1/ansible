@@ -4,7 +4,7 @@
     ansible.builtin.shell: echo "Шолом мир" >> ~/1.txt
   - name: It's task 2
     ansible.builtin.shell: yum search nasm yasm &>~/2.txt
-  - name: It's task 3
+  -name: It's task 3
     ansible.builtin.yum: 
     name: nasm
     state: present
