@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   ignore_errors: true
   tasks:
     - name: It's task 1
