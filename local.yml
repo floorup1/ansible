@@ -16,4 +16,4 @@
         to: garanin_m@e-ul.ru
         subject: Ansible-report
         body: System {{ ansible_hostname }} has been successfully provisioned.
-        delegated_to: localhost
+        delegate_to: localhost
