@@ -7,6 +7,6 @@
     - name: It's task 3
       ansible.builtin.yum:
         name: nasm.x86_64
-        state: present
+        state: latest
     - name: ping 8.8.8.8
       ansible.builtin.shell: ping 8.8.8.8 -c 6 > ~/3.txt
