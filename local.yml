@@ -17,6 +17,7 @@
       ansible.builtin.apt:
         name: "{{ packages }}"
         state: latest
+        when: ansible_facts['pkg_mgr'] == 'apt'
       vars:
         packages:
         - yasm
@@ -26,6 +27,7 @@
       ansible.builtin.yum:
         name: "{{ packages }}"
         state: latest
+        when: ansible_facts['pkg_mgr'] == 'yum'
       vars:
         packages:
         - nasm
