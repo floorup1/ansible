@@ -9,7 +9,11 @@
         name: nasm.x86_64
         state: present
     - name: send a message to chat in playbook
-      telegram:
+      community.general.telegram:
         token: '6168200291:AAEBErgXq0K1LWwOtOGxe8aiB29h2QJQ8fk'
-        chat_id: 394243148
-        msg: "Ansible task finished"
+        api_args:
+          chat_id: 394243148
+          parse_mode: "markdown"
+          text: "Приказание выполнено, хозяин"
+          disable_web_page_preview: true
+          disable_notification: true
