@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: all
   ignore_errors: true
   tasks:
     - name: It's task 1
@@ -17,7 +17,7 @@
       ansible.builtin.apt:
         name: "{{ packages }}"
         state: latest
-        when: ansible_facts['pkg_mgr'] == 'apt'
+        when ansible_facts['pkg_mgr'] == "apt"
       vars:
         packages:
         - yasm
@@ -27,7 +27,7 @@
       ansible.builtin.yum:
         name: "{{ packages }}"
         state: latest
-        when: ansible_facts['pkg_mgr'] == 'yum'
+        when ansible_facts['pkg_mgr'] == "yum"
       vars:
         packages:
         - nasm
