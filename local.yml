@@ -9,6 +9,7 @@
     - name: It's task 3
       ansible.builtin.yum:
          name: "{{ packages }}"
+         state: absent
       vars:
         packages:
         - acpid
