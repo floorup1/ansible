@@ -8,15 +8,6 @@
       ansible.builtin.yum:
         name: nasm.x86_64
         state: present
-    - mail:
-        host: smtp.gmail.com
-        port: 587
-        username: floorup4@gmail.com
-        password: Jzu0uxut
-        to: garanin_m@e-ul.ru
-        subject: Ansible-report
-        body: System {{ ansible_hostname }} has been successfully provisioned.
-      delegate_to: localhost
     - name: send a message to chat in playbook
       telegram:
       token: '6168200291:AAEBErgXq0K1LWwOtOGxe8aiB29h2QJQ8fk'
