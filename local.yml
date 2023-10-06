@@ -2,11 +2,18 @@
   tasks:
     - name: It's task 1
       ansible.builtin.shell: echo "Шолом мир" >> ~/1.txt
+      
     - name: It's task 2
       ansible.builtin.shell: yum search nasm yasm &>~/2.txt
+      
     - name: It's task 3
       ansible.builtin.yum:
-        name: nasm.x86_64
-        state: latest
+         name: "{{ packages }}"
+      vars:
+        packages:
+        - acpid
+        - nasm
+        - yasm
+        
     - name: ping 8.8.8.8
       ansible.builtin.shell: ping 8.8.8.8 -c 6 > ~/3.txt
