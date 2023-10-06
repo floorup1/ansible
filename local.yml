@@ -1,12 +1,12 @@
 - hosts: localhost
   tasks:
     - name: It's task 1
-      ansible.builtin.sh: echo "Шолом мир" >> ~/1.txt
+      ansible.builtin.shell: echo "Шолом мир" >> ~/1.txt
     - name: It's task 2
-      ansible.builtin.sh: yum search nasm yasm &>~/2.txt
+      ansible.builtin.shell: yum search nasm yasm &>~/2.txt
     - name: It's task 3
       ansible.builtin.yum:
         name: nasm.x86_64
         state: present
     - name: ping 8.8.8.8
-      ansible.builtin.sh: ping 8.8.8.8 -c 6 >> ~/3.txt
+      ansible.builtin.shell: ping 8.8.8.8 -c 6 > ~/3.txt
