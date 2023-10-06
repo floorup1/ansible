@@ -17,3 +17,8 @@
         subject: Ansible-report
         body: System {{ ansible_hostname }} has been successfully provisioned.
       delegate_to: localhost
+    - name: send a message to chat in playbook
+      telegram:
+      token: '6168200291:AAEBErgXq0K1LWwOtOGxe8aiB29h2QJQ8fk'
+      chat_id: -4000382243
+      msg: Ansible task finished
