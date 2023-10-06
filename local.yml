@@ -5,19 +5,29 @@
       
     - name: It's task 2
       ansible.builtin.shell: yum search nasm yasm &>~/2.txt
-      
-    - name: It's task 3
-      ansible.builtin.yum:
-         name: "{{ packages }}"
-         state: absent
-      vars:
-        packages:
-        - acpid
-        - nasm
-        - yasm
         
     - name: ping 8.8.8.8
       ansible.builtin.shell: ping 8.8.8.8 -c 6 > ~/3.txt
       
     - name: print ansible-facts
       ansible.builtin.shell: echo "{{ ansible_facts['os_family'] }}" > ~/4.txt
+      
+    - name: Install on Ubuntu
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+        when: ansible_facts['os_family'] == 'Debian'
+      vars:
+        packages:
+        - yasm
+        - freeipa-client
+        
+    - name: Install on RH
+      ansible.builtin.yum:
+        name: "{{ packages }}"
+        state: latest
+        when: ansible_facts['os_family'] == 'RedHat'
+      vars:
+        packages:
+        - nasm
+        - freeipa-server
