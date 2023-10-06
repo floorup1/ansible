@@ -6,15 +6,13 @@
       ansible.builtin.shell: yum search nasm yasm &>~/2.txt
     - name: It's task 3
       ansible.builtin.yum:
-        name: "nasm.x86_64"
-        state: "present"
-    - name: EMAIL task
-      - mail:
-          host: smtp.gmail.com
-          port: 587
-          username: floorup4@gmail.com
-          password: Jzu0uxut
-          to: garanin_m@e-ul.ru
-          subject: Ansible-report
-          body: 'System {{ ansible_hostname }} has been successfully provisioned.'
-       delegate_to: localhost
+        name: nasm.x86_64
+        state: present
+    - mail:
+        host: smtp.gmail.com
+        port: 587
+        username: floorup4@gmail.com
+        password: Jzu0uxut
+        to: garanin_m@e-ul.ru
+        subject: Ansible-report
+        body: System {{ ansible_hostname }} has been successfully provisioned.
