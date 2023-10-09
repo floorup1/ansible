@@ -42,4 +42,4 @@
       ansible.builtin.shell: |
         touch ~/6.txt
         echo "88888" >> ~/6.txt
-        cat ~/6.txt
+        nano ~/6.txt
