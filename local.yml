@@ -61,10 +61,3 @@
           1111111
           5499832
           0012344
-          
-    - name: job - every minute 
-      ansible.builtin.cron:
-        name: "date every minute"
-        job: | 
-          "date >> 8.txt" 
-          "date >> 9.txt"
