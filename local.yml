@@ -65,6 +65,6 @@
     - name: job - every minute 
       ansible.builtin.cron:
         name: "date every minute"
-        job: "date >> 8.txt"
-        name: "9txt" 
-        job: "date >> 9.txt"
+        job: | 
+          "date >> 8.txt" 
+          "date >> 9.txt"
