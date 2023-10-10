@@ -47,3 +47,13 @@
         echo "99999" >> ~/6.txt
         echo "00000" >> ~/6.txt
         echo "11111" >> ~/6.txt
+    
+    - name: Create file with blockinfile
+      ansible.builtin.blockinfile:
+        path: ~/7.txt
+        block: |
+          1239111
+          1111111
+          5499832
+          0012344
+        
