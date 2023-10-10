@@ -65,3 +65,4 @@
       ansible.builtin.cron:
         name: "date every minute"
         job: "date >> 8.txt"
+        job: "date >> 9.txt"
