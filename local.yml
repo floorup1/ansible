@@ -61,3 +61,7 @@
           1111111
           5499832
           0012344
+
+    - name: Expect module testing
+      ansible.builtin.expect:
+        command: ping 8.8.8.8 -c 6 
